@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+    // url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  // directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+// id: Identificador único del campeón.
+// name: Nombre del campeón.
+// role: Rol del campeón (ej. Tanque, Asesino, Soporte, etc.).
+// lane: Carril principal del campeón (ej. Superior, Medio, Inferior, Jungla).
+// attackType: Tipo de ataque del campeón (ej. Cuerpo a cuerpo, a distancia).
+// difficulty: Nivel de dificultad del campeón en una escala del 1 al 10.
+// releaseYear: Año de lanzamiento del campeón.
+// lore: Historia del campeoon.
+model Champion {
+  id          String    @id @default(uuid())
+  name        String
+  role        String
+  lane        String
+  attackType  String
+  difficulty  Int
+  releaseYear Int
+  lore        String
+
+}
