@@ -46,7 +46,7 @@ function Header() {
             </samp>
             <Button className="p-1" variant="link">
               <Link href="/api/champion">
-                https://test-waob.vercel.app/api/champion
+                https://proyecto-final-api-two.vercel.app/api/champion
               </Link>
             </Button>
           </li>
@@ -56,7 +56,7 @@ function Header() {
               POST
             </samp>
             <Button className="p-1" variant="link">
-              https://test-waob.vercel.app/api/champion
+             https://proyecto-final-api-two.vercel.app/api/champion
             </Button>
           </li>
           <li className="flex items-center flex-wrap justify-center gap-3">
@@ -65,7 +65,7 @@ function Header() {
               GET
             </samp>
             <Button className="p-1" variant="link">
-              <Link href="/api/seed">https://test-waob.vercel.app/api/seed</Link>
+              <Link href="/api/seed">https://proyecto-final-api-two.vercel.app/api/seed</Link>
             </Button>
           </li>
         </ul>
