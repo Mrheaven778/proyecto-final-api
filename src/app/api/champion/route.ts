@@ -35,7 +35,7 @@ const postSchema = yup.object({
 export async function POST(request: Request) {
   try {
     const champions = await request.json();
-    await prisma.champion.deleteMany();
+    // await prisma.champion.deleteMany();
     const champion = await prisma.champion.createMany({
       data: champions,
     });
