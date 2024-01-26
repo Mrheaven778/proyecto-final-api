@@ -17,15 +17,30 @@ const postSchema = yup.object({
   lore: yup.string().required(),
 });
 
+// Crear un nuevo campeón
+// export async function POST(request: Request) {
+//   try {
+//     const { attackType, difficulty, lane, lore, name, releaseYear, role } =
+//       await postSchema.validate(await request.json());
+//     const champion = await prisma.champion.create({
+//       data: { attackType, difficulty, lane, lore, name, releaseYear, role },
+//     });
+//     return NextResponse.json(champion);
+//   } catch (error) {
+//     return NextResponse.json({ error: error }, { status: 400 });
+//   }
+// }
+
+// Crear campeones 
 export async function POST(request: Request) {
   try {
-    const { attackType, difficulty, lane, lore, name, releaseYear, role } =
-      await postSchema.validate(await request.json());
-    const champion = await prisma.champion.create({
-      data: { attackType, difficulty, lane, lore, name, releaseYear, role },
+    const champions = await request.json();
+    await prisma.champion.deleteMany();
+    const champion = await prisma.champion.createMany({
+      data: champions,
     });
-    return NextResponse.json(champion);
+    return NextResponse.json("Campeones creados correctamente");
   } catch (error) {
-    return NextResponse.json({ error: error }, { status: 400 });
+     return NextResponse.json({ error: error }, { status: 400 });
   }
 }
