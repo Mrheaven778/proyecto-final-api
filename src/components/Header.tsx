@@ -68,6 +68,15 @@ function Header() {
               <Link href="/api/seed">https://proyecto-final-api-two.vercel.app/api/seed</Link>
             </Button>
           </li>
+            <li className="flex items-center flex-wrap justify-center gap-3">
+            <p>Ejecutar Seed </p>
+            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
+              GET
+            </samp>
+            <Button className="p-1" variant="link">
+              <Link href="/api/champion/fdsfads">https://proyecto-final-api-two.vercel.app/api/champion/:id</Link>
+            </Button>
+          </li>
         </ul>
       </CardContent>
 
