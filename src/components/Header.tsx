@@ -56,7 +56,7 @@ function Header() {
               POST
             </samp>
             <Button className="p-1" variant="link">
-             https://proyecto-final-api-two.vercel.app/api/champion
+              https://proyecto-final-api-two.vercel.app/api/champion
             </Button>
           </li>
           <li className="flex items-center flex-wrap justify-center gap-3">
@@ -65,16 +65,31 @@ function Header() {
               GET
             </samp>
             <Button className="p-1" variant="link">
-              <Link href="/api/seed">https://proyecto-final-api-two.vercel.app/api/seed</Link>
+              <Link href="/api/seed">
+                https://proyecto-final-api-two.vercel.app/api/seed
+              </Link>
             </Button>
           </li>
-            <li className="flex items-center flex-wrap justify-center gap-3">
+          <li className="flex items-center flex-wrap justify-center gap-3">
             <p>Ver campeon por id </p>
             <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
               GET
             </samp>
             <Button className="p-1" variant="link">
-              <Link href="/api/champion/fdsfads">https://proyecto-final-api-two.vercel.app/api/champion/:id</Link>
+              <Link href="/api/champion/fdsfads">
+                https://proyecto-final-api-two.vercel.app/api/champion/:id
+              </Link>
+            </Button>
+          </li>
+          <li className="flex items-center flex-wrap justify-center gap-3">
+            <p>Ver campeon por nombre </p>
+            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
+              GET
+            </samp>
+            <Button className="p-1" variant="link">
+              <Link href="/api/champion/aatrox">
+                https://proyecto-final-api-two.vercel.app/api/champion/:name
+              </Link>
             </Button>
           </li>
         </ul>
@@ -87,7 +102,6 @@ function Header() {
         >
           Si quieres ver más proyectos, visita mi portafolio
           <SiGithubsponsors />
-
         </Link>
       </CardFooter>
     </Card>
