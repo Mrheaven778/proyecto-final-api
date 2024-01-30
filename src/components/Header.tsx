@@ -87,7 +87,7 @@ function Header() {
               GET
             </samp>
             <Button className="p-1" variant="link">
-              <Link href="/api/champion/aatrox">
+              <Link href="/api/champion/name/aatrox">
                 https://proyecto-final-api-two.vercel.app/api/champion/:name
               </Link>
             </Button>
