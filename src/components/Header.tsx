@@ -88,7 +88,7 @@ function Header() {
             </samp>
             <Button className="p-1" variant="link">
               <Link href="/api/champion/name/aatrox">
-                https://proyecto-final-api-two.vercel.app/api/champion/:name
+                https://proyecto-final-api-two.vercel.app/api/champion/name/:name
               </Link>
             </Button>
           </li>
