@@ -69,7 +69,7 @@ function Header() {
             </Button>
           </li>
             <li className="flex items-center flex-wrap justify-center gap-3">
-            <p>Ejecutar Seed </p>
+            <p>Ver campeon por id </p>
             <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
               GET
             </samp>
