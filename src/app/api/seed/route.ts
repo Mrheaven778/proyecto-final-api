@@ -2,7 +2,6 @@ import prisma from "@/lib/prisma";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(request: Request) {
-
   await prisma.champion.deleteMany();
   
   await prisma.champion.createMany({

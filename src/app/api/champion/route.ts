@@ -31,7 +31,7 @@ const postSchema = yup.object({
 //   }
 // }
 
-// Crear campeones 
+// Crear campeones
 export async function POST(request: Request) {
   try {
     const champions = await request.json();
@@ -41,6 +41,6 @@ export async function POST(request: Request) {
     });
     return NextResponse.json("Campeones creados correctamente");
   } catch (error) {
-     return NextResponse.json({ error: error }, { status: 400 });
+    return NextResponse.json({ error: error }, { status: 400 });
   }
 }
