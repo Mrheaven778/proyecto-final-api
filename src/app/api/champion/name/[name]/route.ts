@@ -11,17 +11,17 @@ export async function GET(request: Request, { params }: Segments) {
   const { name } = params;
   const champion = await prisma.champion.findMany({
     where: {
-      OR:[
+      OR: [
         {
-          name:name
+          name: name,
         },
         {
-          role:name
+          role: name,
         },
         {
-          lane:name
-        }
-      ] 
+          lane: name,
+        },
+      ],
     },
   });
 
@@ -34,5 +34,7 @@ export async function GET(request: Request, { params }: Segments) {
     );
   }
 
-  return NextResponse.json(champion);
+  return NextResponse.json({
+    data: champion,
+  });
 }
