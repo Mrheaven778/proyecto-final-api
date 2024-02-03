@@ -11,9 +11,20 @@ export async function GET(request: Request, { params }: Segments) {
   const { name } = params;
   const champion = await prisma.champion.findFirst({
     where: {
-      name: name,
+      OR:[
+        {
+          name:name
+        },
+        {
+          role:name
+        },
+        {
+          lane:name
+        }
+      ] 
     },
   });
+
   if (!champion) {
     return NextResponse.json(
       { error: `No se ha encontrado el nombre: ${name}` },
