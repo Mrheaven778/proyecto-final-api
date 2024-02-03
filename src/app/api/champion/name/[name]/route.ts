@@ -9,7 +9,7 @@ interface Segments {
 
 export async function GET(request: Request, { params }: Segments) {
   const { name } = params;
-  const champion = await prisma.champion.findFirst({
+  const champion = await prisma.champion.findMany({
     where: {
       OR:[
         {
