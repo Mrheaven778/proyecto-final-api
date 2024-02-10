@@ -13,6 +13,7 @@ import { Lemon } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { FcSearch } from "react-icons/fc";
 import { SiGithubsponsors } from "react-icons/si";
+import Peticiones from "@/app/components/Peticiones";
 
 const lemon = Lemon({
   subsets: ["latin"],
@@ -39,63 +40,32 @@ function Header() {
 
       <CardContent>
         <ul className="text-center mt-4">
-          <li className="flex items-center flex-wrap justify-center gap-3">
-            <p className="">Sacar todos los campeones </p>
-            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
-              GET
-            </samp>
-            <Button className="p-1" variant="link">
-              <Link href="/api/champion">
-                https://proyecto-final-api-two.vercel.app/api/champion
-              </Link>
-            </Button>
-          </li>
-          <li className="flex items-center flex-wrap justify-center gap-3">
-            <p>Crear campeón </p>
-            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
-              POST
-            </samp>
-            <Button className="p-1" variant="link">
-              https://proyecto-final-api-two.vercel.app/api/champion
-            </Button>
-          </li>
-          <li className="flex items-center flex-wrap justify-center gap-3">
-            <p>Ejecutar Seed </p>
-            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
-              GET
-            </samp>
-            <Button className="p-1" variant="link">
-              <Link href="/api/seed">
-                https://proyecto-final-api-two.vercel.app/api/seed
-              </Link>
-            </Button>
-          </li>
-          <li className="flex items-center flex-wrap justify-center gap-3">
-            <p>Ver campeon por id </p>
-            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
-              GET
-            </samp>
-            <Button className="p-1" variant="link">
-              <Link href="/api/champion/fdsfads">
-                https://proyecto-final-api-two.vercel.app/api/champion/:id
-              </Link>
-            </Button>
-          </li>
-          <li className="flex items-center flex-wrap justify-center gap-3">
-            <p>Ver campeon por nombre </p>
-            <samp className="font-bold bg-slate-900 px-2 py-1 rounded-lg text-white">
-              GET
-            </samp>
-            <Button className="p-1" variant="link">
-              <Link href="/api/champion/name/aatrox">
-                https://proyecto-final-api-two.vercel.app/api/champion/name/:name
-              </Link>
-            </Button>
-          </li>
+          <Peticiones method="GET" description="Sacar todos los campeones" endpoint="https://proyecto-final-api-two.vercel.app/api/champion" />
+          <Peticiones method="GET" description="Ejecutar Seed" endpoint="https://proyecto-final-api-two.vercel.app/api/seed" />
+          <Peticiones method="GET" description="Ver campeon por id" endpoint="https://proyecto-final-api-two.vercel.app/api/champion/:id" />
+          <Peticiones method="GET" description="Ver campeon por nombre" endpoint="https://proyecto-final-api-two.vercel.app/api/champion/name/:name" />
         </ul>
+        <Peticiones method="POST" description="Crear campeón" endpoint="https://proyecto-final-api-two.vercel.app/api/champion" />
+        <div className="flex flex-col justify-center items-center mt-8">
+          <p className="text-lg text-gray-500">¿Qué espera el POST?</p>
+          <pre className="text-sm text-violet-800 overflow-auto">
+            {`
+    {
+      "name": "string",
+      "role": "string",
+      "lane": "string",
+      "attackType": "string",
+      "difficulty": "number",
+      "releaseYear": "number",
+      "lore": "string"
+    }
+    `}
+          </pre>
+        </div>
+
       </CardContent>
 
-      <CardFooter className="mt-6 flex items-center justify-center flex-col">
+      <CardFooter className="mt-6  flex items-center justify-center flex-col">
         <Link
           href="https://mrheaven.vercel.app"
           className="flex-row justify-center  cursor-pointer hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg px-5 py-1 text-center inline-flex items-center dark:focus:ring-[#1da1f2]/55 hover:shadow-lg transition-all duration-200 ease-in-out hover:scale-110 scale-90 gap-x-2 opacity-90 hover:opacity-100"
